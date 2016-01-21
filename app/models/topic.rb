@@ -13,7 +13,7 @@ class Topic < ActiveRecord::Base
 	    )
 	end
 
-  	def votes_count
+  	def vote_count
 	    # In the above SQL there is the line that counts the votes and creates the
 	    # selected query column "votes_count", which means that each Topic has a
 	    # "votes_count" attribute.
