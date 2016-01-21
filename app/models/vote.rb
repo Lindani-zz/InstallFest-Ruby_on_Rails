@@ -1,3 +1,4 @@
 class Vote < ActiveRecord::Base
-  belongs_to :topic
+	attr_accessible :topic_id
+	belongs_to :topic
 end
