@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       post 'upvote'
       delete 'downvote'
     end
+    get '/about', :to => 'topics#about'
   end
 
   # resources :topics do

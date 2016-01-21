@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
+    @topics = Topic.all.sorted_topics
   end
 
   # GET /topics/1
@@ -16,7 +16,8 @@ class TopicsController < ApplicationController
   def new
     @topic = Topic.new
   end
-
+  def about
+  end
   # GET /topics/1/edit
   def edit
   end
@@ -71,6 +72,10 @@ class TopicsController < ApplicationController
     @topic.votes.last.destroy
     redirect_to(topics_path)
   end
+
+  # def sorted_topics
+  #   @topic.all.sort_by{ |topic| topic.votes.count}
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
